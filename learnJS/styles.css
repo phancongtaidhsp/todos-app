@@ -62,10 +62,11 @@ input:focus{
     height: auto;
     font-size: 24px;
 }
+
 .item__input-selected{
     flex:90%;
     border: 0.5px solid;
-    box-shadow: 0px -1px 2px 0px rgba(153, 155, 173, 0.603);
+    box-shadow: 0px 0px 5px rgba(153, 155, 173, 0.603);
 }
 .edit-input{
     text-decoration: initial;
@@ -188,4 +189,7 @@ a.selected{
     color: #777777;
     top: 10px;
     left: 14px;
+}
+[contenteditable]:focus {
+    outline: 0px solid transparent;
 }
