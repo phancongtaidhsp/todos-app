@@ -146,7 +146,7 @@ class View {
         round.appendChild(checkbox);
         round.appendChild(lableCheckbox);
         let classCompleted = todo.complete ? ' completed' : '';
-        let data = `<div class="item__input${classCompleted}" contenteditable=true>${todo.text}</div>
+        let data = `<div class="item__input${classCompleted}">${todo.text}</div>
         <button type="button" class="close" aria-label="Close">
             <i class="delete fas fa-times"></i>
         </button>`;
@@ -192,8 +192,10 @@ class View {
   _addEventEditInput(){
     var arr=[...this.todoList.children];
     for (const i of arr) {
-      i.children[1].addEventListener('click', event => {
+      i.children[1].addEventListener('dblclick', event => {
         if (event.target.className.includes('item__input')) {
+          event.target.contentEditable=true;
+          event.target.focus();
           if(!event.target.className.includes('item__input-selected edit-input'))
             event.target.className+=' item__input-selected edit-input';
           var parent = event.target.parentElement;
