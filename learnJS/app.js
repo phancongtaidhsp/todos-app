@@ -92,9 +92,11 @@ class View {
     <a class="link-change-display" href="#" data-name="all">All</a>
     <a class="link-change-display" href="#" data-name="active">Active</a>
     <a class="link-change-display" href="#" data-name="completed">Completed</a>
-    </nav>`;
+    </nav>
+    <button class="btn-clear-completed">Clear completed</button>`;
     this.footer.innerHTML+=bodyFooter;
     this.app.appendChild(this.bodyApp);
+    this.btnClearCompleted = document.querySelector('.btn-clear-completed');
   }
 
   get _todoText() {
@@ -168,11 +170,9 @@ class View {
       }
       document.querySelector('.count-item').innerHTML=`${itemsLeft} items left`;
       if(fullTodos.length - itemsLeft > 0 ){
-        if(!this.footer.lastChild.className.includes('btn-clear-completed'))
-          this.footer.innerHTML+=`<button class="btn-clear-completed">Clear completed</button>`;
+        this.btnClearCompleted.style.display="inline-block";
       }
-      else if(this.footer.lastChild.className.includes('btn-clear-completed'))
-        this.footer.removeChild(this.footer.lastChild);
+      else this.btnClearCompleted.style.display="none";
     }
     let childrenFooter = [...this.footer.children];
     for (const el of childrenFooter) {
