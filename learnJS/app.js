@@ -170,9 +170,9 @@ class View {
       }
       document.querySelector('.count-item').innerHTML=`${itemsLeft} items left`;
       if(fullTodos.length - itemsLeft > 0 ){
-        this.btnClearCompleted.style.display="inline-block";
+        this.btnClearCompleted.style.visibility="visible";
       }
-      else this.btnClearCompleted.style.display="none";
+      else this.btnClearCompleted.style.visibility="hidden";
     }
     let childrenFooter = [...this.footer.children];
     for (const el of childrenFooter) {

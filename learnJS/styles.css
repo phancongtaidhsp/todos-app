@@ -139,9 +139,10 @@ input:focus{
     font-size: 14px;
     padding:10px 14px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     position: relative;
+    justify-content: space-between;
+    align-items: center;
 }
 .link-change-display{
     padding: 3px 7px;
@@ -159,7 +160,6 @@ input:focus{
     background: none;
     border: none;
     cursor: pointer;
-    position: absolute;
     top: 10px;
     right: 10px;
 }
@@ -185,11 +185,19 @@ a.selected{
     border: 1px solid #EFD5D5;
 }
 .count-item{
-    position: absolute;
     color: #777777;
     top: 10px;
     left: 14px;
 }
 [contenteditable]:focus {
     outline: 0px solid transparent;
+}
+
+@media only screen and (max-width: 550px){
+    .item{
+        width: 100vw
+    }
+    .user-input{
+        width: 100vw;
+    }
 }
