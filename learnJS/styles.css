@@ -193,11 +193,28 @@ a.selected{
     outline: 0px solid transparent;
 }
 
+.filter{
+    text-align: center;
+}
+
 @media only screen and (max-width: 550px){
     .item{
         width: 100vw
     }
     .user-input{
         width: 100vw;
+    }
+}
+@media only screen and (max-width: 415px){
+    .count-item{
+        order: 1;
+    }
+    .btn-clear-completed{
+        order: 1;
+    }
+    .filter{
+        margin-top: 10px;
+        order: 2;
+        flex-basis: 100%;
     }
 }
