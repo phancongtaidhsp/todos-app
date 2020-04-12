@@ -162,7 +162,10 @@ class View {
       for (const todo of fullTodos) {
         itemsLeft= !todo.complete ? itemsLeft+1 : itemsLeft;
       }
-      document.querySelector('.count-item').innerHTML=`${itemsLeft} items left`;
+
+      if(itemsLeft === 1) document.querySelector('.count-item').innerHTML=`${itemsLeft} item left`;
+      else document.querySelector('.count-item').innerHTML=`${itemsLeft} items left`;
+      
       if(fullTodos.length - itemsLeft > 0 ){
         this.btnClearCompleted.style.visibility="visible";
       }
