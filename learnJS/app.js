@@ -27,13 +27,11 @@ class Model {
       text: todoText,
       complete: false,
     }
-
     this.todos.push(todo);
     this._commit(this.todos);
   }
 
   editTodo(id, updatedText) {
-    
     this.todos = this.todos.map(todo =>
       todo.id === id ? { id: todo.id, text: updatedText, complete: todo.complete } : todo
     )
@@ -73,7 +71,6 @@ class Model {
     })
     this.onTodoListChanged(this.statusDisplay,this.todos);
   }
-
 }
 
 class View {
@@ -109,15 +106,12 @@ class View {
 
   createElement(tag, className) {
     const element = document.createElement(tag);
-
     if (className) element.classList.add(className);
-
     return element;
   }
 
   getElement(selector) {
     const element = document.querySelector(selector);
-
     return element;
   }
 
@@ -311,7 +305,6 @@ class View {
       handle();
     })
   }
-
 }
 
 class Controller {
