@@ -167,6 +167,10 @@ class View {
         this.btnClearCompleted.style.visibility="visible";
       }
       else this.btnClearCompleted.style.visibility="hidden";
+
+      if(itemsLeft === 0)
+        this.fastSelect.className=this.fastSelect.className.replace(' blur-icon','');
+      else if(!this.fastSelect.className.includes('blur-icon')) this.fastSelect.className+=' blur-icon';
     }
     let childrenFooter = [...this.footer.children];
     for (const el of childrenFooter) {
@@ -178,9 +182,6 @@ class View {
         })
       }
     }
-    if(isCompletedsTodos)
-      this.fastSelect.className=this.fastSelect.className.replace(' blur-icon','');
-    else if(!this.fastSelect.className.includes('blur-icon')) this.fastSelect.className+=' blur-icon';
   }
 
   _addEventEditInput(){
